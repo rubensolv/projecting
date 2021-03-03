@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pcandido/projecting/issues"
   },
-  "homepage": "https://github.com/pcandido/projecting#readme"
+  "homepage": "https://github.com/pcandido/projecting#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
