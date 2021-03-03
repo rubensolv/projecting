@@ -1,0 +1,19 @@
+{
+  "name": "projecting",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcandido/projecting.git"
+  },
+  "author": "Paulo Cândido",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pcandido/projecting/issues"
+  },
+  "homepage": "https://github.com/pcandido/projecting#readme"
+}
