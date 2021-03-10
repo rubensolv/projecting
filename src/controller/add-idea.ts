@@ -1,7 +1,7 @@
 export class AddIdeaController {
 
   handle(request: any): any {
-    return { statusCode: 400 }
+    return request.repository ? { statusCode: 200 } : { statusCode: 400 }
   }
 
 }
