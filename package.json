@@ -8,6 +8,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest",
+    "test:watch": "jest --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
