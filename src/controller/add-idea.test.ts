@@ -13,6 +13,12 @@ describe('AddIdeaController', () => {
     expect(response.body).toBe('Missing param: title')
   })
 
+  it('should return 400 if no description is provided', () => {
+    const response = sut().handle({ repository: 'link', title: 'title' })
+    expect(response.statusCode).toBe(400)
+    expect(response.body).toBe('Missing param: description')
+  })
+
   it('should return 200 if success', () => {
     const response = sut().handle({ repository: 'link', title: 'idea', description: 'short text' })
     expect(response.statusCode).toBe(200)
