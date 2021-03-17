@@ -6,8 +6,13 @@ describe('AddIdeaController', () => {
     expect(response.statusCode).toBe(400)
   })
 
-  it('should return 200 if repository is provided', () => {
+  it('should return 400 if no title is provided', () => {
     const response = sut().handle({ repository: 'link' })
+    expect(response.statusCode).toBe(400)
+  })
+
+  it('should return 200 if success', () => {
+    const response = sut().handle({ repository: 'link', title: 'idea', description: 'short text' })
     expect(response.statusCode).toBe(200)
   })
 
