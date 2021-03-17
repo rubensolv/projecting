@@ -2,15 +2,27 @@ import { AddIdeaController } from './add-idea'
 
 describe('AddIdeaController', () => {
   it('should return 400 if no repository is provided', () => {
-    const response = sut().handle({})
+    const response = sut().handle({ title: 'title', description: 'description' })
     expect(response.statusCode).toBe(400)
     expect(response.body).toBe('Missing param: repository')
   })
 
   it('should return 400 if no title is provided', () => {
-    const response = sut().handle({ repository: 'link' })
+    const response = sut().handle({ repository: 'link', description: 'description' })
     expect(response.statusCode).toBe(400)
     expect(response.body).toBe('Missing param: title')
+  })
+
+  it('should return 400 if no description is provided', () => {
+    const response = sut().handle({ repository: 'link', title: 'title' })
+    expect(response.statusCode).toBe(400)
+    expect(response.body).toBe('Missing param: description')
+  })
+
+  it('should return 400 if no repository, title and description is provided', () => {
+    const response = sut().handle({})
+    expect(response.statusCode).toBe(400)
+    expect(response.body).toBe('Missing param: repository, title, description')
   })
 
   it('should return 200 if success', () => {
