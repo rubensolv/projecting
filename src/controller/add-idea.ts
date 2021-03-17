@@ -1,7 +1,11 @@
 export class AddIdeaController {
 
   handle(request: any): any {
-    return request.repository ? { statusCode: 200 } : { statusCode: 400 }
+    if ((request.repository && request.title)) {
+      return { statusCode: 200 }
+    } else {
+      return { statusCode: 400 }
+    }
   }
 
 }
