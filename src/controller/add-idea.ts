@@ -4,7 +4,7 @@ export class AddIdeaController {
     if ((request.repository && request.title)) {
       return { statusCode: 200 }
     } else {
-      return { statusCode: 400 }
+      return { statusCode: 400, body: 'Missing param: repository' }
     }
   }
 
