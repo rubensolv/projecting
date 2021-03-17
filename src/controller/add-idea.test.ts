@@ -4,6 +4,7 @@ describe('AddIdeaController', () => {
   it('should return 400 if no repository is provided', () => {
     const response = sut().handle({})
     expect(response.statusCode).toBe(400)
+    expect(response.body).toBe('Missing param: repository')
   })
 
   it('should return 400 if no title is provided', () => {
