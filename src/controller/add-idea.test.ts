@@ -3,15 +3,15 @@ import { AddIdeaController } from './add-idea'
 describe('AddIdeaController', () => {
 
   it.each([
-    [{ title: 'title', description: 'description' }, 'Missing param: repository'],
-    [{ repository: 'link', description: 'description' }, 'Missing param: title'],
-    [{ repository: 'link', title: 'title' }, 'Missing param: description'],
-    [{ description: 'description' }, 'Missing param: repository, title'],
-    [{}, 'Missing param: repository, title, description'],
-  ])('should return 400 if no repository is provided', (givenBody, expectedMessage) => {
+    ['repository', { title: 'title', description: 'description' }],
+    ['title', { repository: 'link', description: 'description' }],
+    ['description', { repository: 'link', title: 'title' }],
+    ['repository, title', { description: 'description' }],
+    ['repository, title, description', {}],
+  ])('should return 400 if no %s is provided', (expectedMissingParams, givenBody) => {
     const response = sut().handle(givenBody)
     expect(response.statusCode).toBe(400)
-    expect(response.body).toBe(expectedMessage)
+    expect(response.body).toBe(`Missing param: ${expectedMissingParams}`)
   })
 
   it('should return 200 if success', () => {
