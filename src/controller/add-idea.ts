@@ -10,6 +10,10 @@ export class AddIdeaController {
       return { statusCode: 400, body: 'Missing param: title' }
     }
 
+    if (!request.description) {
+      return { statusCode: 400, body: 'Missing param: description' }
+    }
+
     return { statusCode: 200 }
   }
 
