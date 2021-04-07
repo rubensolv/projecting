@@ -5,6 +5,7 @@
 ### Data model
 #### Ideas' contents:
 
+     * Id - Required
      * Title - Required
      * Repository - Required
      * Description - (future - get from hoster autom.) - Required
